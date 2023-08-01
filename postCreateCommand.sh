@@ -1,3 +1,8 @@
+#!/bin/bash
+# Create .env file and maintain the following parameters;
+# GIT_EMAIL=<your Git email>
+# GIT_USER_NAME=<your Git user name>
+
 direName=$(ls | head -n 1)
 source $direName/.devcontainer/.env
 
