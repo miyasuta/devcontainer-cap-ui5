@@ -19,6 +19,6 @@
         }
     },
     "remoteUser": "user",
-    "postCreateCommand": "cd /workspaces && /bin/sh docker/.devcontainer/postCreateCommand.sh",
+    "postCreateCommand": "cd /workspaces && export DIR_NAME=$(ls | head -n 1) && /bin/sh $DIR_NAME/.devcontainer/postCreateCommand.sh",
     "workspaceFolder": "/workspaces"
 }
