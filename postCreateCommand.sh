@@ -6,9 +6,6 @@
 direName=$(ls | head -n 1)
 source $direName/.devcontainer/.env
 
-echo $GIT_EMAIL
-echo $GIT_USER_NAME
-
 git config --global user.email "$GIT_EMAIL"
 git config --global user.name "$GIT_USER_NAME"
 git config --global --add safe.directory $PWD/$direName/.devcontainer
