@@ -1,2 +1,2 @@
 .env
-/.kube/config
+/kube/config
