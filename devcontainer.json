@@ -22,6 +22,6 @@
         }
     },
     "remoteUser": "user",
-    "postCreateCommand": "cd /workspaces/${localWorkspaceFolderBasename} && pwd && /bin/sh .devcontainer/postCreateCommand.sh",
+    "postCreateCommand": "cd /workspaces/${localWorkspaceFolderBasename}/.devcontainer && pwd && /bin/sh ./postCreateCommand.sh",
     "workspaceFolder": "/workspaces"
 }
