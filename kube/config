@@ -1,0 +1,37 @@
+
+---
+apiVersion: v1
+kind: Config
+current-context: shoot--kyma--a8820c1
+clusters:
+- name: shoot--kyma--a8820c1
+  cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM1ekNDQWMrZ0F3SUJBZ0lSQUpiY1c1K1pGRUZOcGVNYkJGU3RGQjB3RFFZSktvWklodmNOQVFFTEJRQXcKRFRFTE1Ba0dBMVVFQXhNQ1kyRXdIaGNOTWpNd09EQTVNakF6TlRNNFdoY05Nek13T0RBNU1qQXpOVE00V2pBTgpNUXN3Q1FZRFZRUURFd0pqWVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTVF2CndPZ1ZDNUVSMGxXWTBlRWVpbUc5KytmQWxnY0ljeCtRek9sVExLVEV1ZUdvZ3UzUDBRSlYrc0ZKT1c3WjBuZWUKenRIbW5Va1U2RDdFT2dsVUtMOVRrN3U3WVplenRpczBoQTFMbDNWYUs2Wkw4OCtKd0xoazZ0bjRmVmNVMTV4UQpxL2pDcFhUOFZtTG5ERHlNK0pIR0ZDUUNTY2lONDUrdjRTRmdBbDMrZVBnQ1JpSmhPZldaRWtpTnZJREV3YlZaCmw4bFNTaUFMWUxLeTVaTHMrYTF1Q0NoZVRPYy93UzUzSGVuWk1XYkJtL0dNTnBFMU9UVHkzTHRKRDhZVFkzZVcKMi91d280M1NRbVNDRnhZMDVkSE03ZjV1bDlKNDUwRE56TTNDTjVYV1I0d0hHTHBQMWNpcjZRZzdYWE90eDJQNQpTSXVxbmV6VWY4cE0wc0ZLYmdjQ0F3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0dtTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZMWGdoWThNQXRIcFNkVXE0K3ZKUUtESUVsbjRNQTBHQ1NxR1NJYjMKRFFFQkN3VUFBNElCQVFBdjNIWVQ0a0JwczJrY1d0VURZY2Y4UHZDejh6S3BNZEhQTzZ4VWpURmJCR01iTGg4cApTVmFwYnJmbWlRa1ozbUhFSmFPRGxTUTJVa2lwL2h4WmFVYmkvcTVZQkNKbXZzN1JjejJtUTdnaTA4ejNkU0orCjc2MVUyVzZSMjd2UEtiOTFpOTF3VXh2U1RsWnpxck1wWE0xdC95OE9BT1JSWG9OK0U2TDllK3pRc1hHSFQvOFYKTlYxRk9RckhNVFRwdFMzdWp6b0RNdGloMWJoNlVQZGh5bXIwTzlvQTZNSW1PWXZwZlUxNHRXMXRzSXBXVllUYgprMENBYmZrRnkyR1NncFNPZ3l0cTFhQ09zbVFGRUNMSzNlWFg3a010d3hZTGg4NkJQQzlHVHM1VHVBSjc3cVY5CkhIbzBuVUhtWHRNWXQ5cVV4dlpYZDZjbFY1Ty9MYXBWZ0xkRwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    server: https://api.a8820c1.kyma.ondemand.com
+contexts:
+- name: shoot--kyma--a8820c1
+  context:
+    cluster: shoot--kyma--a8820c1
+    user: shoot--kyma--a8820c1
+users:
+- name: shoot--kyma--a8820c1
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1beta1
+      args:
+      - get-token
+      - "--oidc-issuer-url=https://kyma.accounts.ondemand.com"
+      - "--oidc-client-id=12b13a26-d993-4d0c-aa08-5f5852bbdff6"
+      - "--oidc-extra-scope=email"
+      - "--oidc-extra-scope=openid"
+      command: kubectl-oidc_login
+      installHint: |
+        kubelogin plugin is required to proceed with authentication
+        # Homebrew (macOS and Linux)
+        brew install int128/kubelogin/kubelogin
+
+        # Krew (macOS, Linux, Windows and ARM)
+        kubectl krew install oidc-login
+
+        # Chocolatey (Windows)
+        choco install kubelogin
