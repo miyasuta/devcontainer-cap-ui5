@@ -1,6 +1,5 @@
 {
     "name": "BTP Setup Automator (Stable)",
-    // "image": "ghcr.io/sap-samples/btp-setup-automator:latest",
     "build": {
         "dockerfile": "Dockerfile",
         "args": {
