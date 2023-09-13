@@ -8,7 +8,8 @@ FROM ghcr.io/sap-samples/btp-setup-automator:latest
 # ENV CHROME_BIN=/usr/bin/chromium-browser
 
 # Install global packages
-RUN  sudo npm install -g yo generator-easy-ui5
+RUN sudo npm i -g yo generator-easy-ui5
+RUN sudo npm i -g typescript ts-node
 
 # Set kubeconfig
 ARG CURRENT_DIR
