@@ -17,7 +17,8 @@
             "extensions": [
 				"sapse.sap-ux-fiori-tools-extension-pack",
 				"humao.rest-client",
-				"SAPSE.vscode-cds"
+				"SAPSE.vscode-cds",
+                "SAPSE.hana-database-explorer"
 			]
         }
     },
